@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+
+import re
+from sys import stdin,stdout,stderr
+
+stand = raw_input('\n()xxxx{=====>\nPlease enter your name: ')
+print ("Your name is " + stand + " the strong")
+print('\nHow many steps do you want to take into the forest?')
+
+for line in stdin:
+	if re.search('[0-2]',line):
+		stdout.write('This is an monster.')
+		#random.randint(1, 10)
+	if re.search('[4-6]',line):
+		print ('This is an wild animal.')
+		#random.randint(1, 10)
+	if re.search('[7-9]',line):
+		stdout.write('This is an zombie.')
+		#random.randint(1, 10)
+	if re.search('[3]',line):
+		stdout.write('Nothing is there.')
+		#random.randint(1, 10)
+	
+stderr.write("\nThe journey begins...\n")
+		
+def game_parse(data):
+	end = "\nThe journey begins...\n"
+	comments=""
+	total=0
+	for line in data:
+		comments += line
+		if re.search('[0-2]',line):
+			stdout.write('This is an monster.')
+			#random.randint(1, 10)
+		if re.search('[4-6]',line):
+			print ('This is an wild animal.')
+			#random.randint(1, 10)
+		if re.search('[7-9]',line):
+			stdout.write('This is an zombie.')
+			#random.randint(1, 10)
+		if re.search('[3]',line):
+			stdout.write('Nothing is there.')
+			#random.randint(1, 10)
+		
+	return (end)
+	
+if __name__=='__main__':
+	from sys import stdin, stdout, stderr
+	
+	(comments) = game_parse(stdin)
+	stderr.write(comments)
+	stderr.write("\nThe journey begins...\n")
+	
+	
+	
+		
