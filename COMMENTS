@@ -1,0 +1,1 @@
+I could not get the search statement stuff working, and since python doesn't really have a switch statement, and I couldn't get the library lookups to work I switched everything over to if/else statements.
