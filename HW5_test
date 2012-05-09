@@ -1,56 +1,32 @@
 #!/usr/bin/env python
 
 import re
-from sys import stdin,stdout,stderr
-
-stand = raw_input('\n()xxxx{=====>\nPlease enter your name: ')
-print ("Your name is " + stand + " the strong")
-print('\nHow many steps do you want to take into the forest?')
-
-for line in stdin:
-	if re.search('[0-2]',line):
-		stdout.write('This is an monster.')
-		#random.randint(1, 10)
-	if re.search('[4-6]',line):
-		print ('This is an wild animal.')
-		#random.randint(1, 10)
-	if re.search('[7-9]',line):
-		stdout.write('This is an zombie.')
-		#random.randint(1, 10)
-	if re.search('[3]',line):
-		stdout.write('Nothing is there.')
-		#random.randint(1, 10)
-	
-stderr.write("\nThe journey begins...\n")
 		
 def game_parse(data):
-	end = "\nThe journey begins...\n"
-	comments=""
-	total=0
 	for line in data:
-		comments += line
 		if re.search('[0-2]',line):
-			stdout.write('This is an monster.')
+			msg = 'This is a monster.\n'
 			#random.randint(1, 10)
 		if re.search('[4-6]',line):
-			print ('This is an wild animal.')
+			msg = 'This is a wild animal.\n'
 			#random.randint(1, 10)
 		if re.search('[7-9]',line):
-			stdout.write('This is an zombie.')
+			msg = 'This is a zombie.\n'
 			#random.randint(1, 10)
 		if re.search('[3]',line):
-			stdout.write('Nothing is there.')
+			msg = 'Nothing is there.\n'
 			#random.randint(1, 10)
 		
-	return (end)
+	return (msg)
 	
 if __name__=='__main__':
 	from sys import stdin, stdout, stderr
 	
-	(comments) = game_parse(stdin)
-	stderr.write(comments)
-	stderr.write("\nThe journey begins...\n")
-	
-	
-	
-		
+	name = raw_input('\n()xxxx{=====>\nPlease enter your name: ')
+	stdout.write("Your name is " + name + " the strong\n")
+	stdout.write("\nThe journey begins...")
+
+	while True:
+		stdout.write('\nHow many steps do you want to take into the forest? ')
+		(event) = game_parse(stdin.readline())
+		stdout.write(event)
