@@ -1,0 +1,13 @@
+This code did not actually have the program implemented properly using a main file and functions. Also, there were a lot of unnecesary variables such as the comments and total. Other problems that I came across were outputting in the function. I fixed this by actually storing the output as a variable and returning it from the function handled by the main, and I moved the end variable to a stdout call getting rid of the variable completely. Other changes were how data was read and passed into the function, variable names not making any sense for what they were such as the character name from "stand" to "name", and msg for the messages being passed, event for the receiving variable from the function. There was also inconsistency between output calls. Sometimes print() was being used and other time stdout.write() was being used. I decided to change everything to stdout.write() based on personal preference. There was also no loop, which is odd being as this is a game and should not stop so I looped the function call. I did not change any error handling but it is needed a lot in the function, and I am still unsure as to why multiple inputs will be taken and read in the function but there may be a reason that I do not understand. Also entering a large number acts as if it is multiple inputs.
+
+
+Not sure if I had to reference the UNIX Rules but the ones I changed were:
+
+	Rule of Modularity: Write simple parts connected by clean interfaces.
+		making the function work
+
+	Rule of Transparency: Design for visibility to make inspection and debugging easier.
+		variable names now make sense making code easier to follow
+
+	Rule of Least Surprise: In interface design, always do the least surprising thing.
+		not sure why things were being output in multiple areas and different ways
